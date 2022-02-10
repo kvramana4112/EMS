@@ -40,23 +40,11 @@ export class LoginComponent implements OnInit {
       localStorage.setItem("username", this.uname);
       this.route.navigateByUrl("dashboard");
     }else{
-      window.alert("invalid login");
+      window.alert("username/password is incorrect");
       this.route.navigateByUrl("login");
     }
 
 
-//console.log(this.result)
-    // debugger;
-    // if(this.result == this.uname) {
-    //   this.route.navigateByUrl("dashboard");
-    // }else{
-    //   this.route.navigateByUrl("login");
-    // }
-  
-  
-    //localStorage.setItem("username", this.uname);
-    //this.route.navigateByUrl("dashboard");
- 
 }
 
   ngOnInit(): void {

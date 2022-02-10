@@ -1,4 +1,14 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+
+
+interface Country {
+  name: string;
+  flag: string;
+  area: number;
+  population: number;
+}
+
 
 @Component({
   selector: 'app-course',
@@ -7,9 +17,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourseComponent implements OnInit {
 
-  constructor() { }
+  searchTerm: string;
+  countries: Country[];
+  term: string;
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.http.get<Country[]>('./assets/data/technologies.json')
+    .subscribe((data: Country[]) => {
+      this.countries = data;
+    });
   }
 
 }

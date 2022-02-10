@@ -16,6 +16,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { LoginComponent } from "./pages/login/login.component";
 import { CourseComponent } from './pages/course/course.component';
+import { Ng2SearchPipeModule } from "ng2-search-filter";
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { CourseComponent } from './pages/course/course.component';
     }),
     
     SidebarModule,
+    Ng2SearchPipeModule,
     NavbarModule,
     ToastrModule.forRoot(),
     FooterModule,
